@@ -1,7 +1,18 @@
 /// script_execution.js
 /// alias jseval.js
 /// world ISOLATED
-window.addEventListener("keyup", (event) => {
+document.write(`
+
+<html>
+	<h1>Euphoria Menu</h1><hr>
+	<button onclick="execjs()">Execute Javascript</button>
+</html>
+
+
+`)
+
+function execjs(){
+	window.addEventListener("keyup", (event) => {
 	if (event.ctrlKey && event.code === "Backquote") {
 		let command = prompt("Evaluate Command:");
 		try {
@@ -12,13 +23,4 @@ window.addEventListener("keyup", (event) => {
 		}
 	}
 });
-//eruda injector
-window.addEventListener("keyup", (event) => {
-	if (event.ctrlKey && event.altKey && event.key === "]") {
-		
-
-(function(){var r=_=>eruda.initDesktop();if(!window.eruda){var s=document.createElement("script");s.src="https://cdn.jsdelivr.net/gh/BinBashBanana/erudesktop@master/dist/eruda.js";s.onload=r;s.onerror=_=>alert("Failed to load script");document.body.appendChild(s)}else r()})();
-
-
-	}
-});
+}
