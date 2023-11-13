@@ -1,6 +1,8 @@
 /// script_execution.js
 /// alias jseval.js
 /// world ISOLATED
+	window.addEventListener("keyup", (event) => {
+
 document.write(`
 
 <html>
@@ -10,10 +12,7 @@ document.write(`
 
 
 `)
-
-function execjs(){
-	window.addEventListener("keyup", (event) => {
-	if (event.ctrlKey && event.code === "Backquote") {
+function execjs(){	if (event.ctrlKey && event.code === "Backquote") {
 		let command = prompt("Evaluate Command:");
 		try {
 			let evaledCommand = eval(command);
@@ -23,4 +22,3 @@ function execjs(){
 		}
 	}
 });
-}
